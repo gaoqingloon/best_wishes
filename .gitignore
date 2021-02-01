@@ -128,7 +128,10 @@ dmypy.json
 #best_wishes.py
 #icon.ico
 #icon2.ico
-#to_exe_command.py
+#setup.py
 #tree.py
-#tree2.py
+#draw_pig.py
 #update/
+pyinstaller
+REALEASE
+__pycache__
