@@ -1,18 +1,18 @@
 # -*- coding:utf-8 -*-
 import sys
-from common.period import *
+
+from VERSION import *
+from commemorative_moment.draw_clock import *
 from commemorative_moment.draw_heart import *
 from commemorative_moment.draw_rose import *
-from commemorative_moment.draw_clock import *
 from commemorative_moment.first_show import *
-from marathon.marathon import *
-from VERSION import *
 
 
 SELECT_PARSE = "+" + "-" * 58 + "+\n" \
                "| <1> Common Tools\t\t\t\t\t   |\n" \
                "| <2> Commemorative Moment\t\t\t\t   |\n" \
                "| <3> Marathon\t\t\t\t\t\t   |\n" \
+               "| <4> About\t\t\t\t\t\t   |\n" \
                "| <0> Exit\t\t\t\t\t\t   |\n" \
                "+" + "-" * 58 + "+\n" \
                "Please select : "
@@ -26,18 +26,20 @@ def select_route():
     print()
     print("Please select module: ")
     select_num = input(SELECT_PARSE)
-    select_num = module_select(select_num, SELECT_PARSE, 0, 3)
+    select_num = module_select(select_num, SELECT_PARSE, 0, 4)
 
     # 分支一：姨妈周期
     if int(select_num) == 1:
-        event_period()
+        from common.router import function_router
+        function_router()
 
     # 分支二：图片惊喜
     elif int(select_num) == 2:
         try:
             # 【图片】欢迎语
             draw_heart()
-            input("[ 按命令行提示操作会有惊喜哦^_^... ]\n\n[ 按回车键有惊喜哦... ]")
+            print()
+            input(":) According to the command line prompt operation will have surprise Oh... \n:) Please press Enter : ")
             # 【图片】画玫瑰
             draw_rose()
             # 【文字】表白
@@ -49,7 +51,12 @@ def select_route():
 
     # 分支三：马拉松
     elif int(select_num) == 3:
+        from marathon.marathon import marathon_show
         marathon_show()
+
+    elif int(select_num) == 4:
+        from about.router import about_router
+        about_router()
 
     else:
         sys.exit(0)
@@ -74,5 +81,6 @@ if __name__ == "__main__":
 
 
 """
-pip install numpy -i http://pypi.douban.com/simple/ --trusted-host pypi.douban.com
+pip install gpxpy -i http://pypi.douban.com/simple/ --trusted-host pypi.douban.com
+pip install python-tcxparser -i http://pypi.douban.com/simple/ --trusted-host pypi.douban.com
 """

@@ -1,8 +1,7 @@
 from utils.valid_util import *
 
-
 BEFORE_TIME = "2021-01-17"
-DEFAULT_DURATION = 30
+DEFAULT_PERIOD = 30
 DEFAULT_BORDER = "*"
 HEART_PARSE = ['猪猪, I LOVE YOU.',
                '你黑暗的时候我陪你等天亮。',
@@ -35,6 +34,6 @@ def together_time():
     days, hours, seconds = cal_detail_time(time.strftime("%Y-%m-%d %H:%M:%S", time.localtime()), "2021-01-03 11:18:00")
     print()
     print("*" * 60)
-    print(":)          已经在一起" + str(days + 1) + "天，" + str(hours) + "小时，" + str(seconds) + "秒啦.          *")
+    print(":)" + " " * 4 + "Together for " + str(days + 1) + " days, " + str(hours) + " hours, " + str(
+        seconds) + " seconds." + " " * 4 + "*")
     print("*" * 60)
-

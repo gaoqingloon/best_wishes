@@ -42,13 +42,26 @@ def is_valid_date(date_str):
         return False
 
 
+def is_valid_date_dot(date_str):
+    """
+    判断是否是一个有效的日期字符串
+    :param date_str:
+    :return:
+    """
+    try:
+        time.strptime(date_str, "%Y.%m.%d")
+        return True
+    except Exception:
+        return False
+
+
 def double_valid(select, range_min, range_max):
     if not is_valid_number(select):
-        print(":( number format ERROR!!!")
+        print(":( Please input number!")
         return False
     else:
         if not is_range(select, range_min, range_max):
-            print(":( select range ERROR!!!")
+            print(":( Input range Error!")
             return False
         else:
             return True

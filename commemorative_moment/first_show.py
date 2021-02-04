@@ -3,9 +3,8 @@ def first_show():
     表白
     :return:
     """
-    print()
-    print("[ 哈哈，送你一朵玫瑰花... ]")
-    input("[ 图片不要关闭哦，继续回车吧... ]")
+    print(":) A rose for you... ")
+    input(":) Don't close the picture. Continue to Enter : ")
     print()
     print("\n\t\t+", end="")
     print("-" * 40, end="+")

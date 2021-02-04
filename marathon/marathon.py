@@ -22,7 +22,7 @@ def marathon_show():
         "| <6> 2019.11.03 北京全马\t\t\t\t   |\n" + \
         "| <7> 2019.12.01 千岛湖半程\t\t\t\t   |\n" + \
         "| <8> 2020.12.06 千岛湖半程\t\t\t\t   |\n" + \
-        "| <0> 返回上一级\t\t\t\t\t   |\n" + \
+        "| <0> Exit\t\t\t\t\t\t   |\n" + \
         "+" + "-" * 58 + "+\n" + \
         "Please select: "
 
@@ -288,10 +288,10 @@ def qiandaohu_half_2019_12_01():
     title = "获得29岁以下大众一级选手称号，恭喜！"
 
     race_no = "C25564"
-    gun_time = "2:17:01"
-    net_time = "2:13:32"
-    avg_pace = "00:06:20"
-    avg_speed = "9:48"
+    gun_time = ""
+    net_time = "01:58:54"
+    avg_pace = ""
+    avg_speed = ""
 
     km_5_timing = "00:30:08"
     km_5_time = "00:30:08"
@@ -325,7 +325,7 @@ def qiandaohu_half_2020_12_06():
 
     our_name = "刘姝鹏" + tab_3 + "高庆龙"
     race_no = "C29201" + tab_3 + "C29202"
-    gun_time = "02:28:02" + tab_3 + "02:28:01"
+    gun_time = ""
     net_time = "02:28:02" + tab_3 + "02:28:01"
     avg_pace = ""
     avg_speed = ""
@@ -367,7 +367,8 @@ def print_half_info(base, title, race_no, gun_time, net_time, avg_pace, avg_spee
         print("\t|")
     print("\t|  NAME : " + name)
     print("\t|  RACE NO  : " + race_no)
-    print("\t|  GUN TIME : " + gun_time)
+    if gun_time != "":
+        print("\t|  GUN TIME : " + gun_time)
     if is_pb:
         print("\t|  NET TIME : " + net_time + " (PB)")
     else:
