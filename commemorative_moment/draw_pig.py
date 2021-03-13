@@ -1,5 +1,5 @@
 # coding:utf-8
-from turtle import*
+from turtle import *
 
 def nose(x,y):#鼻子
     pu()

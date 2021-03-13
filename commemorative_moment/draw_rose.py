@@ -1,13 +1,20 @@
 import turtle
 
 
-def draw_rose():
+def draw_rose(delay=5):
     """
     绘制玫瑰
     :return:
     """
     # 窗口内内容重置
     turtle.reset()
+    # turtle.setup(600, 800)
+
+    t = turtle.Turtle()
+    t.hideturtle()
+    t.screen.delay(delay)
+
+
     # 设置初始位置
     turtle.penup()
     turtle.left(90)
@@ -94,3 +101,20 @@ def draw_rose():
     turtle.fd(60)
     turtle.right(90)
     turtle.circle(200, 60)
+
+    # author
+    turtle.tracer(False)
+    turtle.goto(180, -180)
+    turtle.showturtle()
+    turtle.write("A Rose For You.", align="center", font=("Courier", 12, "bold"))
+
+    turtle.tracer(False)
+    turtle.goto(180, -210)
+    turtle.showturtle()
+    turtle.write("Jan 03 11:18, 2021", align="center", font=("Courier", 9, "bold"))
+
+    turtle.mainloop()
+
+
+if __name__ == '__main__':
+    draw_rose(1)

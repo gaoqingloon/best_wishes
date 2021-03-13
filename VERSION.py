@@ -1,5 +1,5 @@
 #######################################
-SOFTWARE_VERSION = "2.1.1"
+SOFTWARE_VERSION = "2.4.2"
 #######################################
 
 
@@ -8,5 +8,19 @@ def welcome():
     欢迎语
     :return:
     """
-    print()
-    print(":)          Welcome To BEST_WISHES(%s) Software.         " % SOFTWARE_VERSION)
+    print("""
+                                     
+                                     
+     / __      ___      ___    __  ___ 
+    //   ) ) //___) ) ((   ) )  / /    
+   //   / / //         \ \     / /     
+  ((___/ / ((____   //   ) )  / /      
+                                                         
+                                                         
+                  ( )  ___     / __      ___      ___    
+    //  / /  / / / / ((   ) ) //   ) ) //___) ) ((   ) ) 
+   //  / /  / / / /   \ \    //   / / //         \ \     
+  ((__( (__/ / / / //   ) ) //   / / ((____   //   ) )   
+
+    """)
+    print(":)        Welcome To BEST_WISHES(%s) Software. " % SOFTWARE_VERSION)

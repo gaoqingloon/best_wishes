@@ -65,6 +65,7 @@ def setup_clock(radius):
         turtle.right(6)
 
 
+
 def format_week(t):
     week = ["星期一", "星期二", "星期三", "星期四", "星期五", "星期六", "星期日"]
     return week[t.weekday()]
@@ -74,7 +75,7 @@ def format_date(t):
     y = t.year
     m = t.month
     d = t.day
-    return "%s %d %d" % (y, m, d)
+    return "%s-%d-%d" % (y, m, d)
 
 
 def tick():
@@ -91,29 +92,33 @@ def tick():
         minHand.setheading(6 * minute)
         hurHand.setheading(30 * hour)
 
+        together_time = cal_time(t.strftime("%Y-%m-%d"), "2021-01-03") + 1
+
         turtle.tracer(False)
         printer.forward(65)
         printer.write(format_week(t), align="center", font=("Courier", 14, "bold"))
         printer.back(130)
         printer.write(format_date(t), align="center", font=("Courier", 14, "bold"))
         printer.back(170)
-        together_time = cal_time(t.strftime("%Y-%m-%d"), "2021-01-03") + 1
-        printer.write("\n在一起" + str(together_time) + "天啦...", align="center", font=("Courier", 14, "bold"))
+        printer.write("我们在一起" + str(together_time) + "天啦.", align="center", font=("Courier", 14, "bold"))
+        printer.back(30)
+        printer.write("2021-01-03 11:18", align="center", font=("Courier", 11, "bold"))
 
         printer.home()
         turtle.tracer(True)
         turtle.ontimer(tick, 100)  # 100ms后继续调用tick
-    except Exception:
+    except Exception as e:
         pass
 
 
 def clock_main():
-    try:
-        turtle.tracer(False)
-        init()
-        setup_clock(160)
-        turtle.tracer(True)
-        tick()
-        turtle.mainloop()
-    except Exception:
-        pass
+    turtle.tracer(False)
+    init()
+    setup_clock(160)
+    turtle.tracer(True)
+    tick()
+    turtle.mainloop()
+
+
+if __name__ == '__main__':
+    clock_main()

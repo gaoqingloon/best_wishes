@@ -11,7 +11,7 @@ def about_return_button():
 def about_router():
     function_select_parse = \
         "+" + "-" * 58 + "+\n" \
-        "| <1> About BEST_WISHES\t\t\t\t\t   |\n" + \
+        "| <1> About BEST_WISHES software\t\t\t   |\n" + \
         "| <2> Show update log\t\t\t\t\t   |\n" + \
         "| <0> Return\t\t\t\t\t\t   |\n" + \
         "+" + "-" * 58 + "+\n" + \
@@ -40,9 +40,24 @@ def about_router():
         show_2_0_1()
         show_2_1_0()
         show_2_1_1()
+        show_2_2_0()
+        show_2_2_1()
+        show_2_2_2()
+        show_2_3_0()
+        show_2_3_1()
+        show_2_3_2()
+        show_2_3_3()
+        show_2_3_4()
+        show_2_4_0()
+        show_2_4_1()
+        show_2_4_2()
         print("+" + "-" * 58 + "+")
         about_return_button()
 
     else:
         from best_wishes import select_route
         select_route()
+
+
+if __name__ == '__main__':
+    about_router()
